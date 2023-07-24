@@ -71,7 +71,7 @@ function handleCampus(param: string) {
       class="bg-[#191919] text-white transition-all ease-in-out duration-200"
       :class="showTab ? 'h-10' : 'lg:h-0'"
     >
-      <div class="flex flex-row lg:px-12 mx-auto max-w-[1440px]">
+      <div v-if="showTab" class="flex flex-row lg:px-12 mx-auto max-w-[1440px]">
         <button
           @click="tabLink('AP')"
           class="px-2 mx-2 hover:bg-white hover:text-black max-md:text-sm box-border h-10 border-b-[5.6px] border-transparent focus:border-white"
