@@ -171,8 +171,8 @@ function handleCampus(param: string) {
   </div>
   <div class="w-full mt-96 bg-white border-t border-black border-opacity-10">
     <div class="px-12 mx-auto max-w-[1440px]">
-      <div class="pt-2.5 grid md:grid-cols-3">
-        <div class="col-span-1 px-[15px]">
+      <div class="pt-2.5 flex flex-col md:flex-row justify-around">
+        <div class="px-[15px]">
           <a href="">
             <img
               src="../assets/FPT_Polytechnic.png"
@@ -181,7 +181,7 @@ function handleCampus(param: string) {
             />
           </a>
         </div>
-        <div class="col-span-2 px-[15px]">
+        <div class="px-[15px]">
           <div>
             <h1 class="text-2xl pb-4 px-4 font-medium text-[#636363]">
               THÔNG TIN LIÊN HỆ

@@ -12,31 +12,12 @@ import Layout from "./components/Layout.vue";
           class="grid lg:grid-cols-2 grid-cols-1 max-lg:grid-rows-2 max-w-[1440px]"
         >
           <div class="p-16 max-lg:pb-0">
-            <p class="text-[#373A3C] text-2xl pb-4 text-justify">
-              Phòng Công nghệ thông tin xin trân trọng thông báo về việc dịch
-              chuyển hệ thống. Việc dịch chuyển này là một phần cải tiến nhằm
-              nâng cao hiệu suất làm việc và cung cấp môi trường làm việc, học
-              tập hiệu quả hơn.
-            </p>
-            <br />
-            <p class="font-semibold">Chi tiết dịch chuyển:</p>
-            <br />
-            <p class="text-justify">
-              Ngày thực hiện: Ngày 24 tháng 7 năm 2023.
-            </p>
-            <br />
-            <p clas="text-justify">
-              Thời gian ảnh hưởng: Dự kiến thời gian chuyển đổi hệ thống sẽ kéo
-              dài trong khoảng 12 giờ, từ 16:00 ngày 24 tháng 7 đến 12h ngày 25
-              tháng 7. Trong thời gian này, một số hệ thống và dịch vụ có thể
-              không hoạt động bình thường.
-            </p>
-            <br />
-            <p class="text-justify">
-              Ảnh hưởng dự kiến: Trong quá trình dịch chuyển, có thể xảy ra sự
-              cố tạm thời với một số ứng dụng và dịch vụ. Chúng tôi đã lập kế
-              hoạch để giảm thiểu tối đa các ảnh hưởng này và đảm bảo việc hoạt
-              động trở lại sao cho nhanh chóng và ổn định nhất.
+            <h1 class="text-[#373A3C] font-semibold text-6xl pb-4">
+              Strengthen employability to attract more students
+            </h1>
+            <p class="text-lg">
+              Equip students with the most in-demand skills and prepare them for
+              job success.
             </p>
             <div class="py-16">
               <LoginButton isLarge></LoginButton>
