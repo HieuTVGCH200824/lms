@@ -171,10 +171,14 @@ function handleCampus(param: string) {
   </div>
   <div class="w-full mt-96 bg-white border-t border-black border-opacity-10">
     <div class="px-12 mx-auto max-w-[1440px]">
-      <div class="pt-2.5 grid grid-cols-3">
+      <div class="pt-2.5 grid md:grid-cols-3">
         <div class="col-span-1 px-[15px]">
           <a href="">
-            <img src="../assets/FPT_Polytechnic.png" alt="logo" class="h-24" />
+            <img
+              src="../assets/FPT_Polytechnic.png"
+              alt="logo"
+              class="max-h-24"
+            />
           </a>
         </div>
         <div class="col-span-2 px-[15px]">
@@ -186,7 +190,7 @@ function handleCampus(param: string) {
               Trụ sở chính Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ
               Liêm, Hà Nội
             </p>
-            <div class="flex flex-row">
+            <div class="flex flex-col md:flex-row">
               <div class="flex flex-col gap-4 px-4">
                 <div>
                   <h3
@@ -240,7 +244,7 @@ function handleCampus(param: string) {
               <div class="flex flex-col gap-4 px-4">
                 <div>
                   <h3
-                    class="pb-2 underline decoration-blue-700 text-blue-700 font-medium"
+                    class="max-md:pt-4 pb-2 underline decoration-blue-700 text-blue-700 font-medium"
                   >
                     Cơ sở Hồ Chí Minh
                   </h3>
