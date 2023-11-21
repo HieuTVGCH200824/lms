@@ -18,7 +18,13 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  multiList: {
+    type: Array,
+    default: () => [],
+  },
 });
+
+const multiList = ref(props.multiList);
 
 const list = ref(false);
 
@@ -76,18 +82,18 @@ function toggle() {
       class="absolute left-1/2 -translate-x-1/2 list-none flex-col items-center justify-center bg-white border border-gray-200 gap-4 py-4 rounded z-20 w-fit"
       :class="list && multi ? 'flex' : 'hidden'"
     >
-      <a class="hover:text-blue-600 hover:underline text-[#636363] px-8">
-        campus
-      </a>
-      <a class="hover:text-blue-600 hover:underline text-[#636363] px-8">
-        campus
-      </a>
-      <a class="hover:text-blue-600 hover:underline text-[#636363] px-8">
-        campus
-      </a>
-      <a class="hover:text-blue-600 hover:underline text-[#636363] px-8">
-        campus
-      </a>
+      <div v-for="item in multiList" class="px-8">
+        <!-- @vue-ignore -->
+        <a
+          :href="item.link"
+          class="hover:text-blue-600 hover:underline text-[#636363] whitespace-nowrap"
+        >
+          <p>
+            <!-- @vue-skip -->
+            {{ item.name }}
+          </p>
+        </a>
+      </div>
     </div>
     <div
       v-if="list && multi"

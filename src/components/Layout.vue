@@ -36,13 +36,39 @@ function tabLink(param: string) {
   }
 }
 
+const otherCampus = ref([
+  {
+    name: "Tay Nguyen",
+    link: "https://fpl3.poly.edu.vn/",
+  },
+  {
+    name: "Hai Phong",
+    link: "https://fpl3.poly.edu.vn/",
+  },
+  {
+    name: "Thanh Hoa",
+    link: "https://fpl3.poly.edu.vn/",
+  },
+  {
+    name: "Ha Nam",
+    link: "https://fpl3.poly.edu.vn/",
+  },
+  {
+    name: "Thai Nguyen",
+    link: "https://fpl3.poly.edu.vn/",
+  },
+  { name: "Dong Nai", link: "https://fpl3.poly.edu.vn/" },
+  { name: "Quy Nhon", link: "https://fpl3.poly.edu.vn/" },
+]);
+
 const animationClass = ref("");
 
 const showTab = ref(true);
 
 function handleScroll() {
   const currentScroll = window.scrollY;
-  if (currentScroll > 20) {
+  const width = window.innerWidth;
+  if (currentScroll > 20 && width > 1024) {
     showTab.value = false;
   } else {
     showTab.value = true;
@@ -69,7 +95,7 @@ function handleCampus(param: string) {
   <div class="fixed w-full z-10">
     <div
       class="bg-[#191919] text-white transition-all ease-in-out duration-200"
-      :class="showTab ? 'h-10' : 'lg:h-0'"
+      :class="showTab ? 'h-10' : 'h-0'"
     >
       <div v-if="showTab" class="flex flex-row lg:px-12 mx-auto max-w-[1440px]">
         <button
@@ -119,7 +145,7 @@ function handleCampus(param: string) {
             </h1>
           </a>
         </div>
-        <div class="max-lg:hidden w-2/5 flex flex-row">
+        <div class="max-lg:hidden flex flex-row">
           <NavItem
             @toggle="toggleList('Hn')"
             :large="false"
@@ -145,9 +171,11 @@ function handleCampus(param: string) {
             :arrow="campusArrow"
           />
           <NavItem
-            @toggle="toggleList('Other')"
+            @toggle="toggleList('Campus List')"
             :large="false"
-            title="Tay Nguyen"
+            title="Select Campus"
+            :multi="true"
+            :multiList="otherCampus"
             :arrow="campusArrow"
           />
         </div>
@@ -171,7 +199,7 @@ function handleCampus(param: string) {
   </div>
   <div class="w-full mt-96 bg-white border-t border-black border-opacity-10">
     <div class="px-12 mx-auto max-w-[1440px]">
-      <div class="pt-2.5 flex flex-col md:flex-row justify-around">
+      <div class="pt-2.5 flex flex-c`ol md:flex-row justify-around">
         <div class="px-[15px]">
           <a href="">
             <img

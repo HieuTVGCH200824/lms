@@ -2,21 +2,20 @@
 import { ref } from "vue";
 import NavItem from "./NavItem.vue";
 import LoginButton from "./Button/LoginButton.vue";
-import NavDropDown from "./NavDropDown.vue";
 
 const isClicked = ref(false);
-const campusClicked = ref({
-  HaNoi: false,
-  HoChiMinh: false,
-  CanTho: false,
-  DaNang: false,
-});
+// const campusClicked = ref({
+//   HaNoi: false,
+//   HoChiMinh: false,
+//   CanTho: false,
+//   DaNang: false,
+// });
 
-const emit = defineEmits(["selectCampus"]);
+// const emit = defineEmits(["selectCampus"]);
 
-function handleSelectcampus(campus: string) {
-  emit("selectCampus", campus);
-}
+// function handleSelectcampus(campus: string) {
+//   emit("selectCampus", campus);
+// }
 
 const campusArrow = ref(false);
 
@@ -91,74 +90,84 @@ function handleCampus(index: string) {
       </svg>
     </div>
   </button>
-  <div v-if="isClicked" class="fixed top-24 w-full h-full bg-white right-0">
+  <div
+    v-if="isClicked"
+    class="fixed top-24 w-full h-full bg-white right-0 bottom-10"
+  >
     <div
-      class="pt-6 space-y-6 transition-all ease-in-out duration-700"
+      class="pt-6 space-y-6 transition-all ease-in-out duration-700 max-h-[85vh] overflow-y-scroll"
       :class="isClicked ? 'opacity-100' : 'opacity-0'"
     >
       <div class="px-5">
-        <div>
-          <NavItem
-            @toggle="handleCampus('Hn')"
-            large
-            title="Ha Noi"
-            :arrow="campusArrow"
-          />
-          <div class="">
-            <NavDropDown
-              @select="handleSelectcampus"
-              v-if="campusClicked.HaNoi"
-              class="animate-[fadeIn_ease-in-out_300ms] w-full"
-            />
-          </div>
-          <NavItem
-            @toggle="handleCampus('Hcm')"
-            large
-            title="Ho Chi Minh"
-            :arrow="campusArrow"
-          />
-          <div class="">
-            <NavDropDown
-              @select="handleSelectcampus"
-              v-if="campusClicked.HoChiMinh"
-              class="animate-[fadeIn_ease-in-out_300ms] w-full"
-            />
-          </div>
-          <NavItem
-            @toggle="handleCampus('Other')"
-            large
-            title="Da Nang"
-            :arrow="campusArrow"
-          />
-          <div class="">
-            <NavDropDown
-              @select="handleSelectcampus"
-              v-if="campusClicked.CanTho"
-              class="animate-[fadeIn_ease-in-out_300ms] w-full"
-            />
-          </div>
-          <NavItem
-            @toggle="handleCampus('Other')"
-            large
-            title="Can Tho"
-            :arrow="campusArrow"
-          />
-          <div class="">
-            <NavDropDown
-              @select="handleSelectcampus"
-              v-if="campusClicked.DaNang"
-              class="animate-[fadeIn_ease-in-out_300ms] w-full"
-            />
-          </div>
-          <NavItem
-            @toggle="handleCampus('Other')"
-            large
-            title="Tay Nguyen"
-            :arrow="campusArrow"
-          />
-        </div>
+        <NavItem
+          @toggle="handleCampus('Hn')"
+          large
+          title="Ha Noi"
+          :arrow="campusArrow"
+        />
+
+        <NavItem
+          @toggle="handleCampus('Hcm')"
+          large
+          title="Ho Chi Minh"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Da Nang"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Can Tho"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Tay Nguyen"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Hai Phong"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Thanh Hoa"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Ha Nam"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Thai Nguyen"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Dong Nai"
+          :arrow="campusArrow"
+        />
+        <NavItem
+          @toggle="handleCampus('Other')"
+          large
+          title="Quy Nhon"
+          :arrow="campusArrow"
+        />
       </div>
-      <div class="px-4">
+      <div class="px-4 pb-24">
         <LoginButton :isLarge="false" />
       </div>
     </div>
